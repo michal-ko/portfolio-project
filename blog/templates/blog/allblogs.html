@@ -51,48 +51,31 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link active" href="#">Home</a>
+                <a class="nav-item nav-link" href="#">Home</a>
                 <a class="nav-item nav-link" href="#">Github</a>
                 <a class="nav-item nav-link" href="#">Resume</a>
-                <a class="nav-item nav-link" href="#">Blog</a>
+                <a class="nav-item nav-link active" href="#">Blog</a>
             </div>
         </div>
     </nav>
 </header>
 
 <main role="main">
-
-    <section class="jumbotron text-center">
-        <div class="container">
-            <h1>Hi, I'm Michal.</h1>
-            <p class="lead text-muted">A post-graduate looking for opportunities to utilise his skills as a software developer, who works well in teams and has significant film industry experience. Graduated from NCCA (National Centre for Computer Animation) accredited MA Digital Effects course, at Bournemouth University, with core experience in visual effects technologies, additionally proficient with software design.</p>
-            <p>
-                <a href="mailto:michal.koziatek@protonmail.com" class="btn btn-primary my-2">Get in touch!</a>
-                <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-            </p>
-        </div>
-    </section>
-
-    <div class="album py-5 bg-light">
-        <div class="container">
-
-            <div class="row">
-
-                {% for job in jobs.all %}
-                <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm">
-                        <img class="card-img-top" src="{{ job.images.url }}" alt="image"/>
-                        <div class="card-body">
-                            <p class="card-text">{{ job.summary }}</p>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-
-            </div>
-        </div>
+    <div class="container">
+        <h1 class="text-center pt-5">Welcome to Mike's blog</h1>
+        <br/>
+        <br/>
+        <h2>Latest posts</h2>
+        <hr/>
+        {% for blogpost in blog_obj.all %}
+        <a href=""><h3>{{blogpost.title}}</h3></a>
+        {{blogpost.pub_date}}
+        <br />
+        <img class="img-fluid" src="{{ blogpost.images.url }}" height=200 width="200"/>
+        <br/>
+        <p>{{blogpost.body}}</p>
+        {% endfor %}
     </div>
-
 </main>
 
 <footer class="text-muted">
