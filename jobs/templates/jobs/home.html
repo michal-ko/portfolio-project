@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+{% load staticfiles %}
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -45,16 +46,16 @@
 <body>
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Michal Koziatek</a>
+        <a class="navbar-brand" href="{% url 'home'%}">Michal Koziatek</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
                 <a class="nav-item nav-link active" href="#">Home</a>
-                <a class="nav-item nav-link" href="#">Github</a>
-                <a class="nav-item nav-link" href="#">Resume</a>
-                <a class="nav-item nav-link" href="#">Blog</a>
+                <a class="nav-item nav-link" href="https://github.com/michal-ko">Github</a>
+                <a class="nav-item nav-link" href="{% static 'CV_programing.pdf' %}">Resume</a>
+                <a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a>
             </div>
         </div>
     </nav>
@@ -70,6 +71,7 @@
                 <a href="mailto:michal.koziatek@protonmail.com" class="btn btn-primary my-2">Get in touch!</a>
                 <a href="#" class="btn btn-secondary my-2">Secondary action</a>
             </p>
+            <img src="{% static 'IMG_0861.jpg' %}" width="300" style="transform:rotate(180deg);"/>
         </div>
     </section>
 
